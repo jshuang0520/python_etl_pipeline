@@ -23,3 +23,36 @@ opr_hello >> opr_greet >> opr_sleep >> opr_respond
 
 opr_hello >> opr_greet >> opr_sleep << opr_respond (把 task_3 & task_4 中間箭號方向相反)
 > ![img1](https://miro.medium.com/max/1880/1*UdBcds6vp1BjqCGzfZzoeA.png)
+
+
+--
+
+### So, I am going to create a file with name, my_simple_dag.py
+```
+import datetime as dt
+
+from airflow import DAG
+from airflow.operators.bash_operator import BashOperator
+from airflow.operators.python_operator import PythonOperator
+
+
+def greet():
+    print('Writing in file')
+    with open('path/to/file/greet.txt', 'a+', encoding='utf8') as f:
+        now = dt.datetime.now()
+        t = now.strftime("%Y-%m-%d %H:%M")
+        f.write(str(t) + '\n')
+    return 'Greeted'
+def respond():
+    return 'Greet Responded Again'
+```
+
+### define default_args and create a DAG instance.
+```
+default_args = {
+    'owner': 'airflow',
+    'start_date': dt.datetime(2018, 9, 24, 10, 00, 00),
+    'concurrency': 1,
+    'retries': 0
+}
+```
