@@ -91,7 +91,11 @@ with DAG('my_simple_dag',
          schedule_interval='*/10 * * * *',
          # schedule_interval=None,
          ) as dag:
-```         
+```
+
+--
+
+### [Manage Data Pipelines with Apache Airflow - Example](https://hackersandslackers.com/data-pipelines-apache-airflow/)
 
 --
 
