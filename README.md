@@ -9,6 +9,7 @@
 
 What is Dag?
 > A directed acyclic graph (DAG), is a finite directed graph with no directed cycles. That is, it consists of finitely many vertices and edges, with each edge directed from one vertex to another, such that there is no way to start at any vertex v and follow a consistently-directed sequence of edges that eventually loops back to v again. Equivalently, a DAG is a directed graph that has a topological ordering, a sequence of the vertices such that every edge is directed from earlier to later in the sequence.
+> ![img0](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Topological_Ordering.svg/1920px-Topological_Ordering.svg.png)
 
 What is DagRun?
 > A DagRun is the instance of a DAG that will run at a time. When it runs, all task inside it will be executed.
@@ -17,12 +18,12 @@ What is DagRun?
 --
 
 opr_hello >> opr_greet >> opr_sleep >> opr_respond
-> ![img0](https://miro.medium.com/max/1676/1*7VL-B7vJFjSwt_TL9kxuBQ.png)
+> ![img1](https://miro.medium.com/max/1676/1*7VL-B7vJFjSwt_TL9kxuBQ.png)
 
 --
 
 opr_hello >> opr_greet >> opr_sleep << opr_respond (把 task_3 & task_4 中間箭號方向相反)
-> ![img1](https://miro.medium.com/max/1880/1*UdBcds6vp1BjqCGzfZzoeA.png)
+> ![img2](https://miro.medium.com/max/1880/1*UdBcds6vp1BjqCGzfZzoeA.png)
 
 
 --
