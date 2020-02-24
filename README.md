@@ -77,13 +77,14 @@ with DAG('my_simple_dag',
 opr_hello >> opr_greet >> opr_sleep >> opr_respond
 ```
 
-You can avoid Backfilling in two ways: You set start_date of the future or set catchup = False in DAG instance. For instance, you can do something like below:
-
+### You can avoid Backfilling in two ways: You set start_date of the future or set catchup = False in DAG instance. 
+For instance, you can do something like below:
+```
 with DAG('my_simple_dag',
          catchup=False,
          default_args=default_args,
          schedule_interval='*/10 * * * *',
          # schedule_interval=None,
          ) as dag:
-         
+```         
 
