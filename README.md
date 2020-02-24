@@ -2,7 +2,7 @@
 
 ---
 
-# 1. Airflow (of Apache)
+# 1. Airflow (of Airbnb)
 
 
 ## [Airflow - Official Document](https://airflow.apache.org/docs/stable/tutorial.html#example-pipeline-definition)
